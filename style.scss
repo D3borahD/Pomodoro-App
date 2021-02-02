@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(11, 1, 54);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  position: relative;
+}
+svg {
+  height: 220px;
+  width: 220px;
+  border: 1px solid red;
+  transform: rotate(120deg);
+}
+svg .load {
+  position: absolute;
+  stroke-width: 10;
+  stroke: url(#gradient);
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 630;
+  stroke-dashoffset: 630;
+  animation: chargement 10s linear forwards;
+}
+@keyframes chargement {
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+
+.num {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2em;
+  font-weight: 500;
+}
