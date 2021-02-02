@@ -11,11 +11,13 @@ body {
 }
 .container {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 svg {
   height: 220px;
   width: 220px;
-  border: 1px solid red;
+
   transform: rotate(120deg);
 }
 svg .load {
@@ -31,6 +33,21 @@ svg .load {
 @keyframes chargement {
   100% {
     stroke-dashoffset: 100;
+  }
+}
+svg .rest {
+  position: absolute;
+  stroke-width: 10;
+  stroke: url(#gradient2);
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 630;
+  stroke-dashoffset: 630;
+  animation: rest 12s linear forwards;
+}
+@keyframes rest {
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 

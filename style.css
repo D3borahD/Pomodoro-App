@@ -19,12 +19,18 @@ body {
 
 .container {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 svg {
   height: 220px;
   width: 220px;
-  border: 1px solid red;
   -webkit-transform: rotate(120deg);
           transform: rotate(120deg);
 }
@@ -50,6 +56,30 @@ svg .load {
 @keyframes chargement {
   100% {
     stroke-dashoffset: 100;
+  }
+}
+
+svg .rest {
+  position: absolute;
+  stroke-width: 10;
+  stroke: url(#gradient2);
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 630;
+  stroke-dashoffset: 630;
+  -webkit-animation: rest 12s linear forwards;
+          animation: rest 12s linear forwards;
+}
+
+@-webkit-keyframes rest {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rest {
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 

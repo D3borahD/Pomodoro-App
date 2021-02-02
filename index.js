@@ -11,3 +11,4 @@ setInterval(()=> {
         pourcent.textContent = counter + '%';
     }
 }, 100)
+
