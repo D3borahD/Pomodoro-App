@@ -6,14 +6,20 @@ body {
   background: rgb(11, 1, 54);
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+h1 {
+  color: white;
 }
 .container {
   position: relative;
   display: flex;
   flex-direction: column;
+  margin: 20px;
 }
+
 svg {
   height: 220px;
   width: 220px;
@@ -60,3 +66,17 @@ svg .rest {
   font-size: 2em;
   font-weight: 500;
 }
+input {
+  height: 2rem;
+}
+button {
+  height: 2rem;
+
+  cursor: pointer;
+}
+#countdown {
+  font-size: 5rem;
+  color: white;
+}
+
+// toggle start/stop
