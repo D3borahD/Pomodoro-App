@@ -1,5 +1,4 @@
 const pourcent = document.querySelector('.num');
-
 let counter = 0;
 
 setInterval(()=> {
@@ -33,10 +32,43 @@ function getInputValue() {
         countDownE1.innerHTML = `${minutes} : ${seconds}`;
         if (time > 0) {
             time--;
+
         }else {
             countDownE1.innerHTML = `Pause`
         };
     };
-
-
 }
+
+// toggler Start Stop
+
+const btn = document.querySelector('.btn');
+const txt = document.querySelector('p');
+
+btn.addEventListener('click', updateBtn);
+
+function updateBtn() {
+  if (btn.value === 'stop') {
+    btn.value = 'start';
+    btn.textContent = 'start';
+  } else {
+    btn.value = 'stop';
+    btn.textContent = 'stop';
+  
+  };
+}
+
+// Reset:
+
+// const reset = document.querySelector('.reset');
+
+// reset.addEventListener('click', reset);
+
+// function reset() {
+//     if (btn.value === 'reset') {
+// // clear set interval
+//     }
+    
+// }
+
+
+
