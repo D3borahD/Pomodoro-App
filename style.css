@@ -118,7 +118,16 @@ button {
   color: white;
 }
 
-p {
-  color: white;
+input {
+  border-radius: 20%;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+}
+
+button {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
 }
 /*# sourceMappingURL=style.css.map */
