@@ -12,57 +12,56 @@ setInterval(()=> {
     }
 }, 100)
 
-// Timer //
+// Timer // ==> /!\ entraine un problème avec les boutons (double click nécessaire pour modifier le statut toggle)
 
-function getInputValue() {
-    let choice = document.getElementById('choice').value;
-    let startingMinutes = choice ;
-    this.choice.Value = ('');
-    let time = startingMinutes * 60;
-    const countDownE1 = document.getElementById('countdown');
-    setInterval(updateCountDown, 1000);
-
-
+// function getInputValue() {
+//     let choice = document.getElementById('choice').value;
+//     let startingMinutes = choice ;
+//     this.choice.Value = ('');
+//     let time = startingMinutes * 60;
+//     const countDownE1 = document.getElementById('countdown');
+//     setInterval(updateCountDown, 1000);
 
 
+//     function updateCountDown() {
+//         const minutes = Math.floor(time/60);
+//         let seconds = time % 60;
+//         seconds = seconds < 10 ? '0' + seconds : seconds;
+//         countDownE1.innerHTML = `${minutes} : ${seconds}`;
+//         if (time > 0) {
+//             time--;
+//         }else {
+//             countDownE1.innerHTML = `Pause`
+//         };
+//     };
 
-    function updateCountDown() {
-        const minutes = Math.floor(time/60);
-        let seconds = time % 60;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-        countDownE1.innerHTML = `${minutes} : ${seconds}`;
-        if (time > 0) {
-            time--;
-        }else {
-            countDownE1.innerHTML = `Pause`
-        };
-    };
-
-// action bouton start stop reset //
+// ***** Action boutons start/stop/reset  ==> OK *****//
 
 const start = document.querySelector('.start');
 const stop = document.querySelector('.stop');
 const reset = document.querySelector('.reset');
 
 start.addEventListener('click', () => {
-    if(start.value === "active"){
-        start.value = "off";
-        stop.disabled = true;
-        reset.disabled = true;
-        compteur.disabled = 'disabled';
-
-    } else {
-        start.value = "active";
-        compteur.disabled = false ;
-        stop.disabled = false;
-        reset.disabled = false;
-    }
-
+  start.classList.toggle('stop');
+  start.disabled = true;
+  stop.disabled = false;
+  reset.disabled = false;
+});
+stop.addEventListener('click',() => {
+    stop.classList.toggle('stop');
+    stop.disabled = true;
+    start.disabled = false;
+});
+reset.addEventListener('click', () => {
+    reset.classList.toggle('stop');
+    start.disabled = false;
 })
 
+// *****//
 
 
-}
+
+// }
 
 
 
